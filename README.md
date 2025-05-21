@@ -1,7 +1,5 @@
 # HistAgent
 
-Welcome to the open-source replication of **\[OpenAI's Deep Research]**.
-
 This repository contains all necessary components to reproduce our system for historical question answering with multi-agent orchestration. The system integrates retrieval, OCR, image search, file parsing, and academic literature access.
 
 ---
