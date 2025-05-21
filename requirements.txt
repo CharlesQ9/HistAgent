@@ -1,4 +1,4 @@
-beautifulsoup4==4.9.3
+beautifulsoup4>=4.9.3
 datasets==3.3.1
 easyocr==1.7.1
 google_search_results==2.4.2
