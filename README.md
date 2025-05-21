@@ -37,8 +37,9 @@ HistAgent demonstrates superior performance over existing LLMs on HistBench's ch
 
 <p align="center">
   <img src="./Figures/Figure_1.png" alt="Performance of LLMs and Agents on HistBench" width="750"/>
+  <br>
+  <em> Fig. 1: Performance comparison on HistBench.
 </p>
-*Fig. 1: Performance comparison on HistBench.*
 
 ## 💡 HistBench Overview
 
@@ -50,14 +51,16 @@ HistBench evaluates AI's historical reasoning, featuring:
 
 <p align="center">
   <img src="./Figures/data_hir.png" alt="HistBench Difficulty Level Definitions" width="750"/>
+  <br>
+  <em> Fig. 2: HistBench difficulty levels.
 </p>
-*Fig. 2: HistBench difficulty levels.*
 
 <p align="center">
   <img src="./Figures/language.png" alt="Language Distribution in HistBench" width="46%"/>
   <img src="./Figures/region.png" alt="Geographic Coverage of HistBench" width="50%"/>
+  <br>
+  <em> Fig. 3: Language diversity (left) and geographic coverage (right) in HistBench.
 </p>
-*Fig. 3: Language diversity (left) and geographic coverage (right) in HistBench.*
 
 For detailed construction insights, refer to Section 4 of our paper and Appendix A.
 
@@ -227,8 +230,9 @@ HistAgent utilizes a Manager Agent to coordinate specialized agents, each with t
 
 <p align="center">
   <img src="./Figures/histagent_arch.png" alt="HistAgent System Architecture" width="800"/>
+  <br>
+  <em> Fig. 4: HistAgent architecture overview.
 </p>
-*Fig. 4: HistAgent architecture overview.*
 
 | Agent                      | Focus                               | Core Functions                                                                                                                                   |
 | -------------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -251,8 +255,9 @@ The **Literature Search Agent** is critical in leveraging academic research capa
 
 <p align="center">
   <img src="./Figures/lit_search_agent.png" alt="Literature Search Agent Architecture" width="700"/>
+  <br>
+  <em> Fig. 5: Literature Search Agent architecture.
 </p>
-*Fig. 5: Literature Search Agent architecture.*
 
 - **Smart Retrieval**: Leverages academic databases efficiently, prioritizing peer-reviewed and reputable sources.
 - **Full-Text Analysis**: Engages in detailed content parsing, extracting precise quotes and sections needed for historical context.
