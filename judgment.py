@@ -120,8 +120,8 @@ def main():
             process_file(input_file, output_file, args.judge, args.num_workers)
     else:
         # Use default file paths
-        input_json = "output_openai_baseline/level2_summary/test_baseline4.jsonl"
-        output_json = "output_openai_baseline/level2_summary/test_baseline4_judgment.jsonl"
+        input_json = "output/baseline.jsonl"
+        output_json = "output/baseline.jsonl"
         process_file(input_json, output_json, args.judge, args.num_workers)
 
 def process_file(input_json, output_json, judge_model, num_workers):
