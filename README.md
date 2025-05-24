@@ -38,7 +38,7 @@ HistAgent demonstrates superior performance over existing LLMs on HistBench's ch
 <p align="center">
   <img src="./Figures/Figure_1.png" alt="Performance of LLMs and Agents on HistBench" width="750"/>
   <br>
-  <em> Fig. 1: Performance comparison on HistBench.
+  <em> Fig. 1: Performance comparison on HistBench.</em>
 </p>
 
 ## 💡 HistBench Overview
@@ -59,7 +59,7 @@ HistBench evaluates AI's historical reasoning, featuring:
   <img src="./Figures/language.png" alt="Language Distribution in HistBench" width="46%"/>
   <img src="./Figures/region.png" alt="Geographic Coverage of HistBench" width="50%"/>
   <br>
-  <em> Fig. 3: Language diversity (left) and geographic coverage (right) in HistBench.
+  <em> Fig. 3: Language diversity (left) and geographic coverage (right) in HistBench.</em>
 </p>
 
 For detailed construction insights, refer to Section 4 of our paper and Appendix A.
@@ -231,7 +231,7 @@ HistAgent utilizes a Manager Agent to coordinate specialized agents, each with t
 <p align="center">
   <img src="./Figures/histagent_arch.png" alt="HistAgent System Architecture" width="800"/>
   <br>
-  <em> Fig. 4: HistAgent architecture overview.
+  <em> Fig. 4: HistAgent architecture overview.</em>
 </p>
 
 | Agent                      | Focus                               | Core Functions                                                                                                                                   |
@@ -256,7 +256,7 @@ The **Literature Search Agent** is critical in leveraging academic research capa
 <p align="center">
   <img src="./Figures/lit_search_agent.png" alt="Literature Search Agent Architecture" width="700"/>
   <br>
-  <em> Fig. 5: Literature Search Agent architecture.
+  <em> Fig. 5: Literature Search Agent architecture.</em>
 </p>
 
 - **Smart Retrieval**: Leverages academic databases efficiently, prioritizing peer-reviewed and reputable sources.
