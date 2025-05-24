@@ -52,7 +52,7 @@ HistBench evaluates AI's historical reasoning, featuring:
 <p align="center">
   <img src="./Figures/data_hir.png" alt="HistBench Difficulty Level Definitions" width="750"/>
   <br>
-  <em> Fig. 2: HistBench difficulty levels.
+  <em> Fig. 2: HistBench difficulty levels.</em>
 </p>
 
 <p align="center">
