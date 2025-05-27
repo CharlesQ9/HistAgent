@@ -24,6 +24,9 @@ import pdfminer
 import pdfminer.high_level
 import pptx
 
+# Add the parent directory to Python path for imports
+sys.path.insert(0, os.path.dirname(__file__))
+
 # File-format detection
 import puremagic
 import pydub

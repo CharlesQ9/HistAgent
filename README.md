@@ -97,7 +97,7 @@ Install the necessary packages via `requirements.txt` and `smolagents`.
 
 ```bash
 pip install -r requirements.txt
-pip install smolagents[dev]
+pip install 'smolagents[dev]'
 ```
 
 ### Step 4: Configure Modified `browser_use` Library
