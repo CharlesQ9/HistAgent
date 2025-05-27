@@ -1,9 +1,9 @@
 # HistAgent: Advancing Multimodal Historical Reasoning
 
-**Official Implementation for paper: On Path to Multimodal Historical Reasoning: HistBench and HistAgent**
+**Official Implementation for paper: [On Path to Multimodal Historical Reasoning: HistBench and HistAgent](https://arxiv.org/abs/2505.20246)**
 
-[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)]([https://arxiv.org/abs/24XX.XXXXX](https://arxiv.org/abs/2505.20246)) <!-- [![Conference](https://img.shields.io/badge/Conference-ICML/NeurIPS/ICLR%202025%20Submission-blue.svg)]() -->
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)](https://arxiv.org/abs/2505.20246)  
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](./LICENSE)  
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 
 ---
@@ -16,6 +16,13 @@ Reproduce our results using the resources provided in this repository, as detail
 *(Authors: Jiahao Qiu, Fulian Xiao, Yimin Wang, Yuchen Mao, Yijia Chen, Xinzhe Juan, Siran Wang, Xuan Qi, Tongcheng Zhang, Zixin Yao, Jiacheng Guo, Yifu Lu, Charles Argon, Jundi Cui, Daixin Chen, Junran Zhou, Shuyao Zhou, Zhanpeng Zhou, Ling Yang, Shilong Liu, Hongru Wang, Kaixuan Huang, Xun Jiang, Xi Gao, Mengdi Wang)*
 
 HistAgent is rooted in the `smolagents` framework with adaptations for the challenges of historical reasoning. This system is rigorously evaluated on **HistBench**, a benchmark featuring 414 questions and covering 29 languages, extensively described in our paper.
+
+## 📄 Paper and Dataset
+
+- **Paper**: [On Path to Multimodal Historical Reasoning: HistBench and HistAgent](https://arxiv.org/abs/2505.20246)  
+- **Dataset**: [HistBench on Hugging Face](https://huggingface.co/datasets/jiahaoq/HistBench)
+
+---
 
 ## 🌟 Key Features
 
