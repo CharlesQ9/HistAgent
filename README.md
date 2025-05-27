@@ -131,6 +131,8 @@ TRANSKRIBUS_PASSWORD=your_transkribus_password
 HF_TOKEN=your_huggingface_token
 OPENROUTER_API_KEY=your_openrouter_api_key
 OPENROUTER_API_BASE=https://openrouter.ai/api/v1
+TEXTIN_APP_ID=your_textin_app_id
+TEXTIN_SECRET_CODE=your_textin_secret_code
 ```
 
 ### Alternatively, Export via Terminal
