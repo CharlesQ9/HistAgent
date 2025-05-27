@@ -104,8 +104,7 @@ HistAgent utilizes a Manager Agent to coordinate specialized agents, each with t
 | **OCR Agent**              | Optical Character Recognition       | Deployed for recognizing text from images, including historical manuscripts with specialized models.                                             |
 | **Speech Recognition Agent**| Audio Transcription                 | Converts speech to text, suitable for audio sources such as interviews or oral histories.                                                        |
 | **Translator Agent**       | Language Conversion                 | Handles multilingual document translation, ensuring historical language accuracy.                                                               |
-| **Video Agent**            | Video Analysis                      | Extracts and processes frames, enabling multimodal interrogation of video content.                                                               |
-| **Baseline Agent**         | Simplified Architecture             | Provides a streamlined agent process for comparative analysis.                                                                                   |
+| **Video Agent**            | Video Analysis                      | Extracts and processes frames, enabling multimodal interrogation of video content.                                                               |                                                                         |
 
 
 The Manager Agent orchestrates tasks in a **CodeAct loop**, ensuring stepwise verification, citation integrity, and structured outputs.
