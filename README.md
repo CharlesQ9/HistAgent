@@ -2,10 +2,9 @@
 
 **Official Implementation for paper: [On Path to Multimodal Historical Reasoning: HistBench and HistAgent](https://arxiv.org/abs/2505.20246)**
 
-[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)](https://arxiv.org/abs/2505.20246)  
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](./LICENSE)  
+[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)](https://arxiv.org/abs/2505.20246) <!-- [![Conference](https://img.shields.io/badge/Conference-ICML/NeurIPS/ICLR%202025%20Submission-blue.svg)]() -->
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](./LICENSE) 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/release/python-3120/)
-
 ---
 
 Welcome to the official open-source repository for **HistAgent**, an innovative multi-agent system crafted for historical question answering. This cutting-edge tool employs advanced multimodal approaches, leveraging components such as OCR, image analysis, and file parsing to tackle the intricate challenges of historical inquiries effectively.
