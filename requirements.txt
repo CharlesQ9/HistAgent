@@ -1,7 +1,7 @@
 beautifulsoup4>=4.9.3
 datasets==3.3.1
 easyocr==1.7.1
-google_search_results==2.4.2
+google-search-results==2.4.2
 huggingface_hub==0.31.2
 langchain_anthropic==0.3.13
 langchain_core==0.3.60
@@ -28,7 +28,6 @@ pydub==0.25.1
 PyPDF2==3.0.1
 pytest==8.3.5
 python-dotenv==1.1.0
-python_pptx==1.0.2
 ratelimit==2.2.1
 Requests==2.32.3
 rich==14.0.0
@@ -41,5 +40,13 @@ torch==2.2.0
 tqdm==4.67.1
 transformers==4.49.0
 translate==3.6.1
-youtube_transcript_api==1.0.3
 libretranslate
+mammoth
+datasets
+pdfminer
+pdfminer.six
+python-pptx
+puremagic
+SpeechRecognition
+youtube-transcript-api
+pathvalidate
