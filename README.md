@@ -224,6 +224,55 @@ Each directory contains:
   - **Task-Specific Logs**: Per question/task logging.
   - **Error Log**: Details of runtime errors encountered.
 
+## 🧮 Evaluation
+
+We provide an evaluation script, `judgement.py`, to assess the accuracy of HistAgent’s outputs against ground-truth answers. This script builds upon and refines the evaluation logic from the **HLE benchmark (Humanity’s Last Exam)**.
+
+### How to Run the Evaluation
+
+After generating result `.jsonl` files using `run_hist.py`, you can evaluate them as follows:
+
+```bash
+python judgement.py --input_file path/to/your_results.jsonl --output_file path/to/evaluated_results.jsonl
+```
+
+For batch processing multiple files, use:
+
+```bash
+python judgement.py --input_dir path/to/your_results_dir --output_dir path/to/evaluated_results_dir
+```
+
+The script uses your **OpenAI API key** for LLM-based semantic judging and allows customization of the evaluation model (e.g., `gpt-4o`).
+
+### Evaluation Logic
+
+- **HLE-Inspired Framework:**  
+  The evaluation criteria inherit from the HLE benchmark's semantic consistency logic. It checks whether the core meaning and necessary key points in the response align with the ground truth, while allowing for small numerical errors and variations in phrasing.
+- **Final Answer Extraction:**  
+  The script extracts a `final_answer` from each model's response. If no exact answer is present, it records `None`.
+- **Semantic Judgement:**  
+  An LLM judges whether the extracted final answer matches the ground truth. If there are any inconsistencies, ambiguities, or missing key points, the answer is marked as incorrect.
+- **Accuracy Calculation:**  
+  The script computes overall accuracy as the proportion of correct answers. It also logs detailed information for each task, including extracted answers, reasoning, and confidence scores.
+
+Example output for each entry:
+
+```json
+{
+  "task_id": "001",
+  "question": "Who painted the Mona Lisa?",
+  "model_answer": "The Mona Lisa was painted by Leonardo da Vinci.",
+  "true_answer": "Leonardo da Vinci",
+  "is_correct": true,
+  "extracted_final_answer": "Leonardo da Vinci",
+  "reasoning": "The model answer directly matches the true answer without any discrepancies.",
+  "confidence": 100
+}
+```
+
+For detailed evaluation logic, see `judgement.py`.
+
+
 ## 🧠 HistAgent Architecture & Specialist Agents
 
 HistAgent utilizes a Manager Agent to coordinate specialized agents, each with targeted tools, thus embracing a modular structure for complex historical reasoning tasks.
