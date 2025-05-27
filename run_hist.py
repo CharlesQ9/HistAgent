@@ -790,14 +790,6 @@ Begin by determining if this is an exactMatch question. If it is, use BookMatchE
    - Provides detailed descriptions of what appears in the image
    - Input: image file path
    - Output: comprehensive description of the image content
-   
-4. Speech Recognition: Convert speech to text
-   - Input: audio file path (.wav, .mp3, etc.)
-   - Output: transcribed text
-   
-5. Translation: Translate text between languages
-   - Input: text and target language code (e.g., 'en', 'zh')
-   - Output: translated text
 """,
         provide_run_summary=True,
         logger=logger
@@ -817,11 +809,6 @@ For image files (detected automatically):
   2. Image analysis - when you need to understand the image content and get a detailed description
 - Example: "Extract text from this image: /path/to/image.jpg" for OCR
 - Example: "Analyze this image: /path/to/image.jpg" for visual description
-
-For audio files (detected automatically):
-- Supported formats: .wav, .mp3, .m4a
-- Speech recognition is applied automatically
-- For non-English audio, transcribe first then translate
 
 For document files (detected automatically):
 - Supported formats: .pdf, .docx, .xlsx, .pptx
