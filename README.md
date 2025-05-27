@@ -389,8 +389,6 @@ Contributions to HistAgent are invaluable! We're open to enhancements, fixes, or
 
 Refer to our [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
-*(Ensure the `CONTRIBUTING.md` file includes processes for pull requests, issue submissions, and coding standards.)*
-
 ## 📄 License
 
 HistAgent is distributed under the [Apache-2.0](./LICENSE). See the [LICENSE](./LICENSE) file for complete info.
