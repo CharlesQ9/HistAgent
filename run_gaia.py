@@ -722,7 +722,7 @@ Begin by determining if this is an exactMatch question. If it is, use BookMatchE
     file_processor_agent = ToolCallingAgent(
         model=model,
         tools=FILE_TOOLS,
-        max_steps=20,
+        max_steps=10,
         verbosity_level=2,
         planning_interval=4,
         name="file_processor",
@@ -741,14 +741,6 @@ Begin by determining if this is an exactMatch question. If it is, use BookMatchE
    - Provides detailed descriptions of what appears in the image
    - Input: image file path
    - Output: comprehensive description of the image content
-   
-4. Speech Recognition: Convert speech to text
-   - Input: audio file path (.wav, .mp3, etc.)
-   - Output: transcribed text
-   
-5. Translation: Translate text between languages
-   - Input: text and target language code (e.g., 'en', 'zh')
-   - Output: translated text
 """,
         provide_run_summary=True,
         logger=logger
@@ -853,11 +845,6 @@ If you encounter any issues:
         5. translator_agent - For text translation
         6. speech_recognition_agent - For speech recognition
         7. Chinese_agent - For Chinese text analysis
-        
-        Remember:
-        - For any image file, you must use image_information_agent and visualizer to analyze the image!
-        - For image with text, you must use ocr_agent to extract the text first!
-        - For any question without image file, you must use text_webbrowser_agent to obtain factual information!
         """,
         logger=logger
     )
