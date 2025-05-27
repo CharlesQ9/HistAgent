@@ -2,7 +2,7 @@
 
 **Official Implementation**
 
-[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)](https://arxiv.org/abs/24XX.XXXXX) <!-- [![Conference](https://img.shields.io/badge/Conference-ICML/NeurIPS/ICLR%202025%20Submission-blue.svg)]() -->
+[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)]([https://arxiv.org/abs/24XX.XXXXX](https://arxiv.org/abs/2505.20246)) <!-- [![Conference](https://img.shields.io/badge/Conference-ICML/NeurIPS/ICLR%202025%20Submission-blue.svg)]() -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 
