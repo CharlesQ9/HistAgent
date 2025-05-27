@@ -41,12 +41,6 @@ tqdm==4.67.1
 transformers==4.49.0
 translate==3.6.1
 libretranslate
-mammoth
-datasets
-pdfminer
-pdfminer.six
 python-pptx
-puremagic
 SpeechRecognition
 youtube-transcript-api
-pathvalidate
