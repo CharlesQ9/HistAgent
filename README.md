@@ -25,17 +25,25 @@ HistAgent is rooted in the `smolagents` framework with adaptations for the chall
 
 ## 🌟 Key Features
 
-- **Domain-Specific Agents**: Specialized agents for various tasks including image processing (OCR, reverse search), document parsing (PDF, Word, Excel), web browsing, and academic literature retrieval.
-- **Advanced OCR Capabilities**: Transcribes historical manuscripts via Transkribus API, with additional support for models tailored to Asian scripts.
-- **Multimodal Understanding**: Can process text, images, and documents, with options to expand to audio and video.
-- **Scholarly Literature Focus**: A specialized Literature Search Agent prioritizes academic sources and performs citation-aware parsing.
+- **Specialized Agents**  
+  Individual agents manage OCR, image analysis, document parsing (PDF, Word, Excel), translation, speech transcription, web browsing, and academic literature search.  
+- **Multimodal Reasoning**  
+  Supports text, image, audio, manuscript and video inputs, enabling combined analysis of visual, textual and spoken sources.  
+- **Historical OCR Integration**  
+  Uses Transkribus for Western scripts and specialized models for non-Latin scripts to transcribe manuscripts and inscriptions.  
+- **Citation-Aware Literature Search**  
+  Prioritizes peer-reviewed sources via Google Scholar, Google Books and Springer API, returning exact quotes with full bibliographic metadata.  
 - **HistBench Compatibility**: Optimized for seamless operation on HistBench, evaluating historical reasoning across various dimensions.
 - **Modular and Extensible**: Built on `smolagents` for easier customization and tool extension.
-- **Reproducibility**: Includes scripts and guidelines to replicate our results and adapt to custom datasets.
 
 ## 📜 Abstract
 
 Recent developments in large language models (LLMs) have greatly advanced various fields, yet their potential in humanities, particularly history, is underutilized. Historical reasoning presents unique challenges to AI, requiring complex multimodal interpretation and temporal inferencing. To bridge this gap, **HistBench** introduces over 400 meticulously reviewed questions evaluating AI's historical reasoning capabilities. Complementing this, **HistAgent** offers a specialized suite of tools including OCR, translation, archival queries, and image processing. It excels on HistBench, outperforming generalist systems and maintaining robust real-world performance, laying the groundwork for multimodal historical reasoning in AI.
+
+## 📜 Abstract
+
+Recent advances in large language models (LLMs) have driven significant progress across many fields, yet their potential in history remains little studied :contentReference[oaicite:0]{index=0}. Historical reasoning requires handling diverse inputs—text, images, manuscripts—and performing temporal and cross-linguistic inference. To evaluate these skills, we introduce HistBench, a collection of 414 questions spanning primary-source retrieval, interpretive analysis, and interdisciplinary challenges across 29 languages and multiple regions :contentReference[oaicite:1]{index=1}. Existing LLMs and generalist agents achieve low accuracy on this benchmark (e.g., GPT-4o with online search attains 18.60% pass@1), highlighting the need for tailored methods. We therefore present HistAgent, a specialized system integrating tools for OCR, translation, archival search, and image understanding. HistAgent based on GPT-4o reaches 27.54% pass@1 and 36.47% pass@2 on HistBench, substantially exceeding all baselines and demonstrating that domain-focused design markedly improves historical reasoning performance :contentReference[oaicite:2]{index=2}.  
+
 
 ## 📊 Performance Highlights
 
