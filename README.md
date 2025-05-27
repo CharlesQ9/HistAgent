@@ -45,7 +45,7 @@ HistAgent is rooted in the `smolagents` framework with adaptations for the chall
 
 ## 📜 Abstract
 
-Recent advances in large language models (LLMs) have driven significant progress across many fields, yet their potential in history remains little studied. Historical reasoning requires handling diverse inputs—text, images, manuscripts—and performing temporal and cross-linguistic inference. To evaluate these skills, we introduce HistBench, a collection of 414 questions spanning primary-source retrieval, interpretive analysis, and interdisciplinary challenges across 29 languages and multiple regions. Existing LLMs and generalist agents achieve low accuracy on this benchmark (e.g., GPT-4o with online search attains 18.60% pass@1), highlighting the need for tailored methods. We therefore present HistAgent, a specialized system integrating agents and tools for OCR, translation, archival search, and image understanding. HistAgent based on GPT-4o reaches 27.54% pass@1 and 36.47% pass@2 on HistBench, substantially exceeding all baselines and demonstrating that domain-focused design markedly improves historical reasoning performance. Notably, HistAgent also achieves 60.00% pass@1 accuracy on GAIA, showing that domain-specific customization doesn’t hinder HistAgent’s competitive performance on real-world general tasks.
+Recent advances in large language models (LLMs) have led to remarkable progress across domains, yet their capabilities in the humanities, particularly history, remain underexplored. Historical reasoning poses unique challenges for AI, involving multimodal source interpretation, temporal inference, and cross-linguistic analysis. While general-purpose agents perform well on many existing benchmarks, they lack the domain-specific expertise required to engage with historical materials and questions. To address this gap, we introduce HistBench, a new benchmark of 414 high-quality questions designed to evaluate AI's capacity for historical reasoning and authored by more than 40 expert contributors. The tasks span a wide range of historical problems-from factual retrieval based on primary sources to interpretive analysis of manuscripts and images, to interdisciplinary challenges involving archaeology, linguistics, or cultural history. Furthermore, the benchmark dataset spans 29 ancient and modern languages and covers a wide range of historical periods and world regions. Finding the poor performance of LLMs and other agents on HistBench, we further present HistAgent, a history-specific agent equipped with carefully designed tools for OCR, translation, archival search, and image understanding in History. On HistBench, HistAgent based on GPT-4o achieves an accuracy of 27.54% pass@1 and 36.47% pass@2, significantly outperforming LLMs with online search and generalist agents, including GPT-4o (18.60%), DeepSeek-R1(14.49%) and Open Deep Research-smolagents(20.29% pass@1 and 25.12% pass@2). These results highlight the limitations of existing LLMs and generalist agents and demonstrate the advantages of HistAgent for historical reasoning.
 
 ## 📊 Performance Highlights
 
@@ -395,8 +395,6 @@ Refer to our [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 ## 📄 License
 
 HistAgent is distributed under the [Apache-2.0](./LICENSE). See the [LICENSE](./LICENSE) file for complete info.
-
-*(Include the full MIT License text in your repository for compliance.)*
 
 ## 🙏 Acknowledgements
 
