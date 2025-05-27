@@ -106,6 +106,8 @@ HistAgent utilizes a Manager Agent to coordinate specialized agents, each with t
 | **Translator Agent**       | Language Conversion                 | Handles multilingual document translation, ensuring historical language accuracy.                                                               |
 | **Video Agent**            | Video Analysis                      | Extracts and processes frames, enabling multimodal interrogation of video content.                                                               |
 | **Baseline Agent**         | Simplified Architecture             | Provides a streamlined agent process for comparative analysis.                                                                                   |
+
+
 The Manager Agent orchestrates tasks in a **CodeReAct loop**, ensuring stepwise verification, citation integrity, and structured outputs.
 For more detailed information on the architecture and agent functionalities, consult Section 5 of our paper.
 
