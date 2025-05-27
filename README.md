@@ -1,6 +1,6 @@
 # HistAgent: Advancing Multimodal Historical Reasoning
 
-**Official Implementation**
+**Official Implementation for paper: On Path to Multimodal Historical Reasoning: HistBench and HistAgent**
 
 [![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)]([https://arxiv.org/abs/24XX.XXXXX](https://arxiv.org/abs/2505.20246)) <!-- [![Conference](https://img.shields.io/badge/Conference-ICML/NeurIPS/ICLR%202025%20Submission-blue.svg)]() -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
