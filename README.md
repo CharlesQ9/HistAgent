@@ -27,14 +27,21 @@ HistAgent is rooted in the `smolagents` framework with adaptations for the chall
 
 - **Specialized Agents**  
   Individual agents manage OCR, image analysis, document parsing (PDF, Word, Excel), translation, speech transcription, web browsing, and academic literature search.  
-- **Multimodal Reasoning**  
-  Supports text, image, audio, manuscript and video inputs, enabling combined analysis of visual, textual and spoken sources.  
+- **Multimodal and Multilingual Reasoning**  
+  Supports diverse source materials: manuscripts, images, audio, video, inscriptions, and texts in 29 modern and ancient languages.
 - **Historical OCR Integration**  
   Uses Transkribus for Western scripts and specialized models for non-Latin scripts to transcribe manuscripts and inscriptions.  
 - **Citation-Aware Literature Search**  
   Prioritizes peer-reviewed sources via Google Scholar, Google Books and Springer API, returning exact quotes with full bibliographic metadata.  
 - **HistBench Compatibility**: Optimized for seamless operation on HistBench, evaluating historical reasoning across various dimensions.
 - **Modular and Extensible**: Built on `smolagents` for easier customization and tool extension.
+- **Three-Stage Human-in-the-Loop Review Pipeline**  
+  HistBench questions undergo preliminary screening, LLM-based filtering, and expert validation to ensure academic rigor and fairness in evaluation.
+- **Structured Historical Evaluation Framework**  
+  HistBench consists of 414 questions across 36 subfields, stratified into three difficulty levels and annotated with metadata (source, topic, reasoning dimension, and explanation).
+- **Competitive and Generalizable Performance**  
+  HistAgent achieves 27.54% pass@1 and 36.47% pass@2 accuracy on HistBench, outperforming GPT-4o (18.60% pass@1) and ODR-smolagents. It also maintains strong performance (60.00% pass@1) on the general-purpose GAIA benchmark.
+
 
 ## 📜 Abstract
 
@@ -52,11 +59,15 @@ HistAgent demonstrates superior performance over existing LLMs on HistBench's ch
 
 ## 💡 HistBench Overview
 
-HistBench evaluates AI's historical reasoning, featuring:
+HistBench is the first dedicated benchmark for historical reasoning in AI:
 
-- **Comprehensive Coverage**: 414 questions spanning 29 ancient and modern languages, over 20 historical regions, and at least 36 subfields.
-- **Multimodal Sources**: Engages with text, images, manuscripts, inscriptions, audio and more.
-- **Stratified Difficulty**: Questions are tiered by complexity in terms of rarity, language, and depth.
+- **414 questions**, curated by domain experts and students, covering:
+  - **6 reasoning dimensions**: bibliographic retrieval, source identification, source processing, historical analysis, interdisciplinary integration, cultural contextualization.
+  - **3 difficulty levels**: Basic (Level 1), Intermediate (Level 2), and Challenging (Level 3).
+  - **29 languages**: including English, Classical Chinese, Latin, Sanskrit, Old Uyghur, and more.
+  - **Multimodal sources**: manuscripts, inscriptions, images, audio, video.
+  - **36+ historical subfields**: e.g., epigraphy, climate history, intellectual history, and material culture.
+- **Three-stage review**: format/semantic check → LLM-based filtering → expert validation.
 
 <p align="center">
   <img src="./Figures/data_hir.png" alt="HistBench Difficulty Level Definitions" width="750"/>
@@ -72,6 +83,49 @@ HistBench evaluates AI's historical reasoning, featuring:
 </p>
 
 For details in HistBench, refer to Section 3 of our paper and Appendix A.
+
+## 🧠 HistAgent Architecture & Specialist Agents
+
+HistAgent utilizes a Manager Agent to coordinate specialized agents, each with targeted tools, thus embracing a modular structure for complex historical reasoning tasks.
+
+<p align="center">
+  <img src="./Figures/histagent_arch.png" alt="HistAgent System Architecture" width="800"/>
+  <br>
+  <em> Fig. 4: HistAgent architecture overview.</em>
+</p>
+
+| Agent                      | Focus                               | Core Functions                                                                                                                                   |
+| -------------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Manager Agent**          | Orchestrator                        | Directs execution, manages request parsing and validation, handles agent outputs.                                                              |
+| **Text WebBrowser Agent**  | Web & Text Interaction              | Conducts web searches, navigates web content, extracts text.                                              |
+| **Image Information Agent**| Image Analysis                      | Executes reverse searches, assesses image parameters, interfaces with OCR for text extraction.                                                  |
+| **Literature Search Agent**| Academic Source Retrieval           | Utilizes scholarly databases for literature retrieval, processes PDFs for detailed content extraction.                                            |
+| **File Processing Agent**  | Document Handling                   | Processes files like PDFs, DOCX, XLSX, etc., to extract and interpret content.                                                                    |
+| **OCR Agent**              | Optical Character Recognition       | Deployed for recognizing text from images, including historical manuscripts with specialized models.                                             |
+| **Speech Recognition Agent**| Audio Transcription                 | Converts speech to text, suitable for audio sources such as interviews or oral histories.                                                        |
+| **Translator Agent**       | Language Conversion                 | Handles multilingual document translation, ensuring historical language accuracy.                                                               |
+| **Video Agent**            | Video Analysis                      | Extracts and processes frames, enabling multimodal interrogation of video content.                                                               |
+| **Baseline Agent**         | Simplified Architecture             | Provides a streamlined agent process for comparative analysis.                                                                                   |
+The Manager Agent orchestrates tasks in a **CodeReAct loop**, ensuring stepwise verification, citation integrity, and structured outputs.
+For more detailed information on the architecture and agent functionalities, consult Section 5 of our paper.
+
+## 🔍 Academic Literature Tools
+
+The **Literature Search Agent** is critical in leveraging academic research capabilities within HistAgent:
+
+<p align="center">
+  <img src="./Figures/lit_search_agent.png" alt="Literature Search Agent Architecture" width="700"/>
+  <br>
+  <em> Fig. 5: Literature Search Agent architecture.</em>
+</p>
+
+- **Smart Retrieval**: Leverages academic databases efficiently, prioritizing peer-reviewed and reputable sources.
+- **Full-Text Analysis**: Engages in detailed content parsing, extracting precise quotes and sections needed for historical context.
+- **Citation Aware**: Ensures integrity with metadata extraction and citation-ready outputs.
+- **Integrated API Use**: Combines Springer API and browser enhancements for comprehensive sourcing.
+
+This agent significantly enhances the integrity and depth of historical research, ensuring results are biblically verifiable.
+
 
 ## 🛠️ Installation
 
@@ -283,49 +337,6 @@ Example output for each entry:
 
 For detailed evaluation logic, see `judgement.py`.
 
-
-## 🧠 HistAgent Architecture & Specialist Agents
-
-HistAgent utilizes a Manager Agent to coordinate specialized agents, each with targeted tools, thus embracing a modular structure for complex historical reasoning tasks.
-
-<p align="center">
-  <img src="./Figures/histagent_arch.png" alt="HistAgent System Architecture" width="800"/>
-  <br>
-  <em> Fig. 4: HistAgent architecture overview.</em>
-</p>
-
-| Agent                      | Focus                               | Core Functions                                                                                                                                   |
-| -------------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Manager Agent**          | Orchestrator                        | Directs execution, manages request parsing and validation, handles agent outputs.                                                              |
-| **Text WebBrowser Agent**  | Web & Text Interaction              | Conducts web searches, navigates web content, extracts text.                                              |
-| **Image Information Agent**| Image Analysis                      | Executes reverse searches, assesses image parameters, interfaces with OCR for text extraction.                                                  |
-| **Literature Search Agent**| Academic Source Retrieval           | Utilizes scholarly databases for literature retrieval, processes PDFs for detailed content extraction.                                            |
-| **File Processing Agent**  | Document Handling                   | Processes files like PDFs, DOCX, XLSX, etc., to extract and interpret content.                                                                    |
-| **OCR Agent**              | Optical Character Recognition       | Deployed for recognizing text from images, including historical manuscripts with specialized models.                                             |
-| **Speech Recognition Agent**| Audio Transcription                 | Converts speech to text, suitable for audio sources such as interviews or oral histories.                                                        |
-| **Translator Agent**       | Language Conversion                 | Handles multilingual document translation, ensuring historical language accuracy.                                                               |
-| **Video Agent**            | Video Analysis                      | Extracts and processes frames, enabling multimodal interrogation of video content.                                                               |
-| **Baseline Agent**         | Simplified Architecture             | Provides a streamlined agent process for comparative analysis.                                                                                   |
-
-For more detailed information on the architecture and agent functionalities, consult Section 5 of our paper.
-
-## 🔍 Academic Literature Tools
-
-The **Literature Search Agent** is critical in leveraging academic research capabilities within HistAgent:
-
-<p align="center">
-  <img src="./Figures/lit_search_agent.png" alt="Literature Search Agent Architecture" width="700"/>
-  <br>
-  <em> Fig. 5: Literature Search Agent architecture.</em>
-</p>
-
-- **Smart Retrieval**: Leverages academic databases efficiently, prioritizing peer-reviewed and reputable sources.
-- **Full-Text Analysis**: Engages in detailed content parsing, extracting precise quotes and sections needed for historical context.
-- **Citation Aware**: Ensures integrity with metadata extraction and citation-ready outputs.
-- **Integrated API Use**: Combines Springer API and browser enhancements for comprehensive sourcing.
-
-This agent significantly enhances the integrity and depth of historical research, ensuring results are biblically verifiable.
-
 ## 🔗 Results Combination Tool (`combine_results.py`)
 
 Combine and analyze results from different experiments using `combine_results.py`.
@@ -353,7 +364,7 @@ python combine_results.py output/level2_summary/run1/*.jsonl output/level2_summa
 
 ## 📜 Citation
 
-If HistAgent or HistBench is influential in your work, kindly cite:
+If you use HistAgent or HistBench, please kindly cite:
 
 ```bibtex
 @misc{qiu2025pathmultimodalhistoricalreasoning,
@@ -367,7 +378,6 @@ If HistAgent or HistBench is influential in your work, kindly cite:
 }
 ```
 
-*Replace placeholder details with official data when available.*
 
 ## 🤝 Contributing
 
@@ -382,7 +392,7 @@ Refer to our [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
 ## 📄 License
 
-HistAgent is distributed under the [MIT License](./LICENSE). See the [LICENSE](./LICENSE) file for complete info.
+HistAgent is distributed under the [Apache-2.0](./LICENSE). See the [LICENSE](./LICENSE) file for complete info.
 
 *(Include the full MIT License text in your repository for compliance.)*
 
