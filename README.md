@@ -54,8 +54,8 @@ HistAgent demonstrates superior performance over existing LLMs on HistBench's ch
 
 HistBench evaluates AI's historical reasoning, featuring:
 
-- **Comprehensive Coverage**: 414 questions spanning various historical periods and regions.
-- **Multimodal Sources**: Engages with text, images, manuscripts, inscriptions, and more.
+- **Comprehensive Coverage**: 414 questions spanning 29 ancient and modern languages, over 20 historical regions, and at least 36 subfields.
+- **Multimodal Sources**: Engages with text, images, manuscripts, inscriptions, audio and more.
 - **Stratified Difficulty**: Questions are tiered by complexity in terms of rarity, language, and depth.
 
 <p align="center">
@@ -71,7 +71,7 @@ HistBench evaluates AI's historical reasoning, featuring:
   <em> Fig. 3: Language diversity (left) and geographic coverage (right) in HistBench.</em>
 </p>
 
-For detailed construction insights, refer to Section 4 of our paper and Appendix A.
+For details in HistBench, refer to Section 3 of our paper and Appendix A.
 
 ## 🛠️ Installation
 
