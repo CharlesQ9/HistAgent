@@ -395,4 +395,4 @@ HistAgent is distributed under the [Apache-2.0](./LICENSE). See the [LICENSE](./
 
 ## 🙏 Acknowledgements
 
-Supported in part by... *(expand upon any funding and support as noted in your paper's acknowledgements)*. A special thanks to the `smolagents` developers for their foundational work, and additional gratitude to all who helped develop and refine HistBench.
+A special thanks to the `smolagents` developers for their foundational work, and additional gratitude to all who helped develop and refine HistBench.
