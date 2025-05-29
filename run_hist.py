@@ -205,6 +205,7 @@ def parse_args():
     parser.add_argument("--springer-api-key", type=str, help="Springer Nature API key", default=os.getenv("SPRINGER_API_KEY"))
     parser.add_argument("--llama-api-key", type=str, help="LlamaParse API key", default=os.getenv("LLAMA_API_KEY"))
     parser.add_argument("--use-Chinese-agent", action="store_true",default=False, help="Enable Chinese agent")
+    parser.add_argument("--use-video-agent", action="store_true",default=False, help="Enable video agent")
     return parser.parse_args()
 
 print("Make sure you deactivated Tailscale VPN, else some URLs will be blocked!")
@@ -277,8 +278,8 @@ os.makedirs(f"./{BROWSER_CONFIG_IMAGE['downloads_folder']}", exist_ok=True)
 os.makedirs(f"./{SPRINGER_CONFIG['downloads_folder']}", exist_ok=True)
 
 
-def create_agent_hierarchy(model: Model, use_image_agent=False, use_file_agent=False, use_literature_agent=False, use_text_webbrowser_agent=True, baseline=False, springer_api_key=None, llama_api_key=None, use_springer=True, use_browser=False, use_ocr_agent=False, use_translator_agent=False, use_speech_recognition_agent=False, use_Chinese_agent=False, logger=None):
-    """
+def create_agent_hierarchy(model: Model, use_image_agent=False, use_file_agent=False, use_literature_agent=False, use_text_webbrowser_agent=True, baseline=False, springer_api_key=None, llama_api_key=None, use_springer=True, use_browser=False, use_ocr_agent=False, use_translator_agent=False, use_speech_recognition_agent=False, use_Chinese_agent=False, use_video_agent=False, logger=None):
+    """ 
     Create agent hierarchy or baseline agent
     
     Parameters:
@@ -457,22 +458,28 @@ def create_agent_hierarchy(model: Model, use_image_agent=False, use_file_agent=F
         logger=logger
     )
     frame_extractor_tool = VideoFrameExtractorTool()
-    frame_extractor_agent = ToolCallingAgent(
+    video_agent = ToolCallingAgent(
         model=model,
         tools=[frame_extractor_tool, visualizer],
         max_steps=5,
         verbosity_level=2,
         planning_interval=1,
-        name="frame_extractor_agent",
+        name="video_agent",
         description="""Agent specialized in video frame extraction.
             
             Features:
             1. Extract frames from videos
             2. Support processing of multiple video formats
+            3. Analyze the video 
         """,
         provide_run_summary=True,
         logger=logger
     )
+    video_agent.prompt_templates["managed_agent"]["task"] += """
+    You are the `video_agent`, responsible for extracting frames from videos.
+    You should give the highest importance and priority to the result of the `Video_Frame_Extractor_Tool`, which includes the video title, the video url, the video resolution, the video duration, the total frames extracted, and the output directory.
+    You must read every extracted frame until you find the answer.
+    """
 
     translator_tool = TranslatorTool()
     translator_agent = ToolCallingAgent(
@@ -868,8 +875,9 @@ If you encounter any issues:
 
     if use_Chinese_agent:
         managed_agents.append(Chinese_agent)
-    
-    managed_agents.append(frame_extractor_agent)
+
+    if use_video_agent:
+    managed_agents.append(video_agent)
 
     manager_agent = CodeAgent(
         model=model,
@@ -907,7 +915,7 @@ You have access to the following agents:
 5. translator_agent - For text translation
 6. speech_recognition_agent - For speech recognition
 7. Chinese_agent - For Chinese text analysis
-8. frame_extractor_agent - For video frame extraction
+8. video_agent - For video frame extraction and analyze the frame content
 """
 
     manager_agent.prompt_templates["task"] = """You are the manager of a team of specialized agents. Your job is to coordinate their work to solve complex tasks.
@@ -1049,6 +1057,7 @@ def answer_single_question(example, model_id, answers_file, visualizer, args):
                                   use_translator_agent=args.use_translator_agent,
                                   use_speech_recognition_agent=args.use_speech_recognition_agent,
                                   use_Chinese_agent=args.use_Chinese_agent,
+                                  use_video_agent=args.use_video_agent,
                                   logger=agent_logger)  # Add logger parameter
 
     # Get question-related information from example
