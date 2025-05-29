@@ -123,15 +123,12 @@ class VideoFrameExtractorTool(Tool):
                 f.write(f"Video FPS: {frames_info.get('video_fps', 0)}\n\n")
                 f.write(f"Frames Extracted: {frames_info.get('total_frames_extracted', 0)}\n")
                 f.write(f"Frames Location: {frames_info.get('output_directory', 'Unknown')}\n\n")
-                f.write("Bird Species to Look For:\n")
-                f.write("- Emperor Penguin Chicks\n")
-                f.write("- Adelie Penguins\n")
-                f.write("- Giant Petrel\n\n")
-                f.write("Instructions:\n")
-                f.write("1. Navigate to the frames directory\n")
-                f.write("2. Review each frame and count the different bird species visible\n")
-                f.write("3. Keep track of the maximum number of different species visible in any frame\n")
-                f.write("4. The frame filename includes the timestamp for reference\n")
+                f.write("Frame Naming Convention:\n
+                - Format: frame_XXXX_HH-MM-SS.jpg \n
+                - XXXX: 4-digit number, indicating the N-th extracted frame (starting from 0000, incrementing by 1) \n
+                - HH-MM-SS: Timestamp in the video (hours-minutes-seconds) when the frame was captured \n
+                Example: frame_0002_0-00-02.jpg means the 3nd extracted frame, captured at 2 seconds in the video \n")
+
                 
             return {
                 "success": True,
@@ -182,6 +179,12 @@ Duration: {video_info.get('duration', 0)} seconds
 
 Extracted {frames_info.get('total_frames_extracted', 0)} frames to: {frames_info.get('output_directory', output_dir)}
 Summary file created at: {summary_info.get('summary_path', 'Unknown')}
+
+Frame Naming Convention:
+- Format: frame_XXXX_HH-MM-SS.jpg
+- XXXX: 4-digit number, indicating the N-th extracted frame (starting from 0000, incrementing by 1)
+- HH-MM-SS: Timestamp in the video (hours-minutes-seconds) when the frame was captured
+Example: frame_0002_0-00-02.jpg means the 3nd extracted frame, captured at 2 seconds in the video
 
 Please review the extracted frames to do the task.
 The frames are timestamped in their filenames for easy reference.
