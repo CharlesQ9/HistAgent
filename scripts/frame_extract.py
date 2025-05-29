@@ -123,11 +123,11 @@ class VideoFrameExtractorTool(Tool):
                 f.write(f"Video FPS: {frames_info.get('video_fps', 0)}\n\n")
                 f.write(f"Frames Extracted: {frames_info.get('total_frames_extracted', 0)}\n")
                 f.write(f"Frames Location: {frames_info.get('output_directory', 'Unknown')}\n\n")
-                f.write("Frame Naming Convention:\n
-                - Format: frame_XXXX_HH-MM-SS.jpg \n
-                - XXXX: 4-digit number, indicating the N-th extracted frame (starting from 0000, incrementing by 1) \n
-                - HH-MM-SS: Timestamp in the video (hours-minutes-seconds) when the frame was captured \n
-                Example: frame_0002_0-00-02.jpg means the 3nd extracted frame, captured at 2 seconds in the video \n")
+                f.write("Frame Naming Convention:\n")
+                f.write("- Format: frame_XXXX_HH-MM-SS.jpg \n")
+                f.write("- XXXX: 4-digit number, indicating the N-th extracted frame (starting from 0000, incrementing by 1) \n")
+                f.write("- HH-MM-SS: Timestamp in the video (hours-minutes-seconds) when the frame was captured \n")
+                f.write("Example: frame_0002_0-00-02.jpg means the 3nd extracted frame, captured at 2 seconds in the video \n")
 
                 
             return {
