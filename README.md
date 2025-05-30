@@ -368,14 +368,11 @@ python combine_results.py output/level2_summary/run1/*.jsonl output/level2_summa
 If you use HistAgent or HistBench, please kindly cite:
 
 ```bibtex
-@misc{qiu2025pathmultimodalhistoricalreasoning,
-      title={On Path to Multimodal Historical Reasoning: HistBench and HistAgent}, 
-      author={Jiahao Qiu and Fulian Xiao and Yimin Wang and Yuchen Mao and Yijia Chen and Xinzhe Juan and Siran Wang and Xuan Qi and Tongcheng Zhang and Zixin Yao and Jiacheng Guo and Yifu Lu and Charles Argon and Jundi Cui and Daixin Chen and Junran Zhou and Shuyao Zhou and Zhanpeng Zhou and Ling Yang and Shilong Liu and Hongru Wang and Kaixuan Huang and Xun Jiang and Yuming Cao and Yue Chen and Yunfei Chen and Zhengyi Chen and Ruowei Dai and Mengqiu Deng and Jiye Fu and Yunting Gu and Zijie Guan and Zirui Huang and Xiaoyan Ji and Yumeng Jiang and Delong Kong and Haolong Li and Jiaqi Li and Ruipeng Li and Tianze Li and Zhuoran Li and Haixia Lian and Mengyue Lin and Xudong Liu and Jiayi Lu and Jinghan Lu and Wanyu Luo and Ziyue Luo and Zihao Pu and Zhi Qiao and Ruihuan Ren and Liang Wan and Ruixiang Wang and Tianhui Wang and Yang Wang and Zeyu Wang and Zihua Wang and Yujia Wu and Zhaoyi Wu and Hao Xin and Weiao Xing and Ruojun Xiong and Weijie Xu and Yao Shu and Xiao Yao and Xiaorui Yang and Yuchen Yang and Nan Yi and Jiadong Yu and Yangyuxuan Yu and Huiting Zeng and Danni Zhang and Yunjie Zhang and Zhaoyu Zhang and Zhiheng Zhang and Xiaofeng Zheng and Peirong Zhou and Linyan Zhong and Xiaoyin Zong and Ying Zhao and Zhenxin Chen and Lin Ding and Xiaoyu Gao and Bingbing Gong and Yichao Li and Yang Liao and Guang Ma and Tianyuan Ma and Xinrui Sun and Tianyi Wang and Han Xia and Ruobing Xian and Gen Ye and Tengfei Yu and Wentao Zhang and Yuxi Wang and Xi Gao and Mengdi Wang},
-      year={2025},
-      eprint={2505.20246},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2505.20246}, 
+@article{qiu2025path,
+  title={On Path to Multimodal Historical Reasoning: HistBench and HistAgent},
+  author={Qiu, Jiahao and Xiao, Fulian and Wang, Yimin and Mao, Yuchen and Chen, Yijia and Juan, Xinzhe and Wang, Siran and Qi, Xuan and Zhang, Tongcheng and Yao, Zixin and others},
+  journal={arXiv preprint arXiv:2505.20246},
+  year={2025}
 }
 ```
 
